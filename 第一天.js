@@ -40,7 +40,7 @@ var addToArrayForm2 = function(num, k) {
     return num
 
 };
-addToArrayForm2([0],10000)
+// addToArrayForm2([0],10000)
 
 
 /**
@@ -61,6 +61,17 @@ alert(curriedSum(1)(2)(3)); // 6, full currying
 手写目标：5分钟运行完成
  */
 
-function curry(func) {
-    //此处补全
-  }
+
+function sum(a, b, c) {
+    return a + b + c;
+}
+  function curry(fun) {
+   return function cur(...args){
+       const  aThis = this;
+       return args.length >= fun.length? fun.apply(aThis,args) : function(...bArgs){
+        return cur.apply(aThis, [...args,...bArgs]);
+       }
+   }
+}
+let curriedSum = curry(sum);
+console.log(curriedSum(1)(2)(3))
