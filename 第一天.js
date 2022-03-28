@@ -7,7 +7,6 @@ https://leetcode-cn.com/problems/add-to-array-form-of-integer/
 
  */
 
-// console.log(String.toString(23))
 
 var addToArrayForm = function(num, k) {
     const length = num.length;
@@ -61,3 +60,7 @@ alert(curriedSum(1)(2, 3)); // 6, currying of 1st arg
 alert(curriedSum(1)(2)(3)); // 6, full currying
 手写目标：5分钟运行完成
  */
+
+function curry(func) {
+    //此处补全
+  }
